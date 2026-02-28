@@ -63,7 +63,7 @@ exports.createJob = async (req, res, next) => {
     const { title, company, location, category, description } = req.body;
 
     const newJob = await sql`
-      INSERT INTO jobs (title, company, location, categories, description)
+      INSERT INTO jobs (title, company, location, category, description)
       VALUES (${title}, ${company}, ${location}, ${category}, ${description})
       RETURNING *
     `;
